@@ -24,15 +24,6 @@ abstract class ItemViewHolder : EpoxyModelWithHolder<ItemVH>() {
         super.bind(view)
         view.tv.text = title
     }
-
-    companion object {
-        fun map(list: List<String>): MutableList<ItemViewHolder_> =
-            mutableListOf<ItemViewHolder_>().apply {
-                list.mapIndexed { index, s ->
-                    add(ItemViewHolder_().id(index).title(s))
-                }
-            }
-    }
 }
 
 class ItemVH : KotlinEpoxyHolder() {
