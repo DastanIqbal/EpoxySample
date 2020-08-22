@@ -1,12 +1,12 @@
-package com.dastnaiqbal.epoxysample
+package com.dastnaiqbal.epoxysample.dataclass
 
 import com.airbnb.epoxy.TypedEpoxyController
-import com.dastnaiqbal.epoxysample.model.ItemDataClass
 
 /**
  *
  * "Iqbal Ahmed" created on 11/07/2020
  */
+
 class SimpleDataController : TypedEpoxyController<List<String>>() {
     private val TAG = this::class.java.simpleName
 

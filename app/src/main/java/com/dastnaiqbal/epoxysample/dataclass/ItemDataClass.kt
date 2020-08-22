@@ -1,4 +1,4 @@
-package com.dastnaiqbal.epoxysample.model
+package com.dastnaiqbal.epoxysample.dataclass
 
 import android.widget.TextView
 import com.dastanapps.dastanlib.utils.ViewUtils
