@@ -39,6 +39,10 @@ android {
     androidExtensions {
         experimental = true
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -54,6 +58,7 @@ dependencies {
 
     def epoxyVersion = "3.11.0"
     implementation "com.airbnb.android:epoxy:$epoxyVersion"
+    implementation "com.airbnb.android:epoxy-databinding:$epoxyVersion"
     kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
 
     implementation "com.dastanapps.dastanlib:ui:1.0"

@@ -2,6 +2,7 @@ package com.dastnaiqbal.epoxysample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.dastnaiqbal.epoxysample.databinding.SimpleDataBindingController
 import com.dastnaiqbal.epoxysample.dataclass.SimpleDataController
 import com.dastnaiqbal.epoxysample.viewholder.SimpleViewHolderController
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
     private val viewHolderController by lazy {
         SimpleViewHolderController()
+    }
+
+    private val dataBindingController by lazy {
+        SimpleDataBindingController()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,10 +42,20 @@ class MainActivity : AppCompatActivity() {
         /**
          * Listing using ViewHolder
          */
-        rv.adapter = viewHolderController.adapter
-        viewHolderController.setData(ArrayList<String>().apply {
+//        rv.adapter = viewHolderController.adapter
+//        viewHolderController.setData(ArrayList<String>().apply {
+//            repeat(10) {
+//                add("Item View Holder #$it")
+//            }
+//        })
+
+        /**
+         * Listing using Databinding
+         */
+        rv.adapter = dataBindingController.adapter
+        dataBindingController.setData(ArrayList<String>().apply {
             repeat(10) {
-                add("Item View Holder #$it")
+                add("Item Databinding #$it")
             }
         })
     }
