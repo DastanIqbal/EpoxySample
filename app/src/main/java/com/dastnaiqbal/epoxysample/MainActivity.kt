@@ -2,6 +2,7 @@ package com.dastnaiqbal.epoxysample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.dastnaiqbal.epoxysample.customview.ItemCustomViewController
 import com.dastnaiqbal.epoxysample.databinding.SimpleDataBindingController
 import com.dastnaiqbal.epoxysample.dataclass.SimpleDataController
 import com.dastnaiqbal.epoxysample.viewholder.SimpleViewHolderController
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
 
     private val dataBindingController by lazy {
         SimpleDataBindingController()
+    }
+
+    private val customViewController by lazy {
+        ItemCustomViewController()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,10 +57,20 @@ class MainActivity : AppCompatActivity() {
         /**
          * Listing using Databinding
          */
-        rv.adapter = dataBindingController.adapter
-        dataBindingController.setData(ArrayList<String>().apply {
+//        rv.adapter = dataBindingController.adapter
+//        dataBindingController.setData(ArrayList<String>().apply {
+//            repeat(10) {
+//                add("Item Databinding #$it")
+//            }
+//        })
+
+        /**
+         * Listing using CustomView
+         */
+        rv.adapter = customViewController.adapter
+        customViewController.setData(ArrayList<String>().apply {
             repeat(10) {
-                add("Item Databinding #$it")
+                add("Item CustomView #$it")
             }
         })
     }
